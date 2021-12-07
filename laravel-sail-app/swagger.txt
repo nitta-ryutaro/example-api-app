@@ -1,0 +1,70 @@
+swagger: '2.0'
+
+info:
+  version: ""
+  title: test api
+
+paths:
+  /users/v2/getUserInfo/{id}:
+    get:
+      description: |
+        ユーザー情報取得
+
+      parameters:
+        -
+          name: id
+          in: path
+          description: id of int
+          required: true
+          type: number
+
+      responses:
+        200:
+          description: Successful responses
+          schema:
+            title: ArrayOfPosts
+            type: array
+            items:
+              title: Posts
+              type: object
+              properties:
+                result:
+                  type: boolean
+                id:
+                  type: string
+                name:
+                  type: boolean
+                age:
+                  type: string
+                birth:
+                  type: string
+                contact:
+                  type: string
+                address:
+                  type: string
+
+  /users/v2/updateUserInfo/{id}:
+    post:
+      description: |
+        ユーザー情報更新
+
+      parameters:
+        -
+          name: id
+          in: path
+          description: id of int
+          required: true
+          type: number
+
+      responses:
+        200:
+          description: Successful responses
+          schema:
+            title: ArrayOfPosts
+            type: array
+            items:
+              title: Posts
+              type: object
+              properties:
+                result:
+                  type: boolean
