@@ -65,7 +65,7 @@
             const v2Url = `${location.href}users/v2/getUserInfo/`;
             let url;
             let userId;
-            let data = {};
+            // let data = {};
 
             $('#id').blur( () => {
                 userId = $('#id').val();
@@ -95,12 +95,6 @@
                 $('.message').remove();
             }
             const setTable = res => {
-                let id;
-                let name;
-                let age;
-                let birth;
-                let contact
-                let address;
                 if (res.result === 'false') {
                     tableClear();
                     clearMessage();
