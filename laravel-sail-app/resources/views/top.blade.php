@@ -95,17 +95,15 @@
                 $('.message').remove();
             }
             const setTable = res => {
+                tableClear();
+                clearMessage();
                 if (res.result === 'false') {
-                    tableClear();
-                    clearMessage();
                     $("<p>", {
                         class: 'message',
                         text : res.errMsg,
                     }).appendTo('.error');
                     return true;
                 };
-                tableClear();
-                clearMessage();
                 $('.input-table').find('input').each( (num, elem) => {
                     Object.keys(res.response).forEach( (key, index) => {
                         if ($(elem).hasClass(key)) $(elem).val(res.response[key]);
